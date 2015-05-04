@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Created by: Reality Software | www.realitysoftware.ca
+Released by: Flash MP3 Player | www.flashmp3player.org
+Note: This is a free template released under the Creative Commons Attribution 3.0 license, 
+which means you can use it in any way you want provided you keep links to authors intact.
+Don't want our links in template? You can pay a link removal fee: www.realitysoftware.ca/templates/
+You can also purchase a PSD-file for this template.
+Ported to XOOPS: Vampire Trix | nightquestsoftware.wordpress.com
+You do not need to pay to use this theme, but leave the footer intact. Not intended for use with ImpressCMS.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<{assign var=theme_name value=$xoTheme->folderName}>	
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<title></title>
+<link href="<{$xoops_themecss}>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+    	<!-- header -->
+        <div id="logo"><a href="<{$xoops_url}>"><{$xoops_sitename}></a>                      </div>
+        <div id="menu">
+            <a href="<{$xoops_url}>">home</a>
+            <a href="<{$xoops_url}>/modules/news/">news</a>
+            <a href="<{$xoops_url}>/modules/newbb/">forum</a>
+            <a href="<{$xoops_url}>/modules/extgallery/">gallery</a>
+            <a href="<{$xoops_url}>/modules/amcontact/">contact us</a>
+        </div>
+        <!--end header -->     
+        <!-- main -->
+        <div id="main">
+          <div id="sidebar"><{foreach item=block from=$xoBlocks.canvas_left}> <{includeq file="$theme_name/theme_blockleft.html"}> <{/foreach}> 
+</div>
+          <div id="text"><td id="xo-page">    
+      
+		  <!-- Start center top blocks loop -->
+		  <{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+		  <table id="xo-topblocks" cellspacing="0">
+		    <!-- Top center blocks -->
+			  <tr>
+				  <td id="xo-topcenterblocks" colspan="2">
+					  <{foreach item=block from=$xoBlocks.page_topcenter}>
+					  <{includeq file="$theme_name/theme_blockcenter_c.html"}>
+					  <{/foreach}>
+					</td>
+			  </tr>
+			  <!-- Top left blocks -->
+		  	<tr>
+					<td id="xo-topleftblocks">
+					  <{foreach item=block from=$xoBlocks.page_topleft}>
+					  <{includeq file="$theme_name/theme_blockcenter_l.html"}>
+					  <{/foreach}>
+					</td>
+				<!-- Top right blocks -->	
+				  <td id="xo-toprightblocks">
+					  <{foreach item=block from=$xoBlocks.page_topright}>
+					  <{includeq file="$theme_name/theme_blockcenter_r.html"}>
+					  <{/foreach}>
+			   </td>
+			 </tr>
+		 </table>
+		 <{/if}>
+		 <!-- End center top blocks loop -->
+		
+		 <!-- Start content module page -->
+     <div id="xo-content"><{$xoops_contents}></div>
+		 <!-- End content module -->
+	
+	   <!-- Start center bottom blocks loop -->
+     <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+		 <table id="xo-bottomblocks" cellspacing="0">
+		  <!-- Bottom center blocks -->	
+		  <{if $xoBlocks.page_bottomcenter}>
+		  <tr>
+			  <td id="xo-bottomcenterblocks" colspan="2">
+				<{foreach from=$xoBlocks.page_bottomcenter item=block}>
+				<{include file="$theme_name/theme_blockcenter_c.html"}><{/foreach}>
+				</td>
+		  </tr>
+		  <{/if}>
+		  <!-- Bottom left blocks -->	
+		  <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+		  <tr>
+			  <td id="xo-bottomleftblocks">
+				<{foreach from=$xoBlocks.page_bottomleft item=block}>
+				<{include file="$theme_name/theme_blockcenter_l.html"}>
+				<{/foreach}>
+				</td>
+				<!-- Bottom right blocks -->	
+				<td id="xo-bottomrightblocks">
+				<{foreach from=$xoBlocks.page_bottomright item=block}>
+				<{include file="$theme_name/theme_blockcenter_r.html"}>
+				<{/foreach}>
+				</td>
+		  </tr>
+		  <{/if}>
+		 </table>
+		 <{/if}>
+		 <!-- End center bottom blocks loop -->
+    </td></div>
+    </div>
+    <!-- end main -->
+    <!-- footer -->
+    <div id="footer">
+            <div id="menu_footer"><a href="&lt;{$xoops_url}&gt;">home</a> <a href="&lt;{$xoops_url}&gt;/modules/news/">news</a> <a href="&lt;{$xoops_url}&gt;/modules/newbb/">forum</a> <a href="&lt;{$xoops_url}&gt;/modules/extgallery/">gallery</a> <a href="&lt;{$xoops_url}&gt;/modules/amcontact/">contact us</a></div>
+            <div id="left_footer">
+<{$xoops_footer}><br />
+<!-- DO NOT CHANGE OR DELETE THESE LINKS. REMOVING THEM IS VERY RUDE AND SHOWS A LACK OF RESPECT. PLEASE CONTACT ME (vampire.trix@gmail.com) IF YOU WISH TO REMOVE THEM -->
+<a href="http://nightquestsoftware.wordpress.com">Ported to XOOPS by Vampire Trix</a> </div>
+            <div id="right_footer">
+
+              <p>
+              <!-- Please do not change or delete these links. Read the license! Thanks. :-) -->
+              <a href="http://www.realitysoftware.ca/services/website-development/design/"><strong>Web design</strong></a> released by <a href="http://www.flashmp3player.org/"><strong>Flash MP3 Player</strong></a>      </p>
+      </div>
+	</div>
+    <!-- end footer -->
+</div>
+</body>
+</html>
